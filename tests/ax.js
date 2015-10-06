@@ -2,11 +2,13 @@ var path = require('path');
 var nightwatchPages = require('nightwatch-pages');
 
 module.exports = {
-  tags: ['sanity'],
-
-  'Load Bing.com': function (client) {
+  'Ax test': function (client) {
     nightwatchPages(client, path.resolve(__dirname, '..', 'pages'));
 
-    client.page.homepage.load().end();
+    client
+      .page.ax
+      .load()
+      .saveScreenshot('./results/screenshots/screen2.png')
+      .end();
   }
 };
