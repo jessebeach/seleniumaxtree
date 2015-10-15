@@ -11,7 +11,7 @@ module.exports = {
       .saveScreenshot('./results/screenshots/screen2.png');
 
     client
-      .timeoutsAsyncScript(50)
+      .timeoutsAsyncScript(250)
       .executeAsync(function (done, data) {
         function onMessage(event) {
           var data = event.data;
